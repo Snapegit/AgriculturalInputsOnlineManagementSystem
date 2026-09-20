@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.FapiaoxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.FapiaoxinxiEntity" id="fapiaoxinxiMap">
+        <result property="fapiaohaoma" column="fapiaohaoma"/>
+        <result property="kaipiaoriqi" column="kaipiaoriqi"/>
+        <result property="nongminzhanghao" column="nongminzhanghao"/>
+        <result property="nongminxingming" column="nongminxingming"/>
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="hanshuidanjia" column="hanshuidanjia"/>
+        <result property="shuilv" column="shuilv"/>
+        <result property="kaipiaojine" column="kaipiaojine"/>
+        <result property="qiyezhanghao" column="qiyezhanghao"/>
+        <result property="kaipiaoqiyemingcheng" column="kaipiaoqiyemingcheng"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.FapiaoxinxiView" >
+
+		SELECT  fapiaoxinxi.* FROM fapiaoxinxi  fapiaoxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.FapiaoxinxiView" >
+		SELECT * FROM fapiaoxinxi  fapiaoxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
